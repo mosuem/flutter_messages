@@ -7,8 +7,6 @@ import 'dart:async';
 import 'package:build/build.dart';
 import 'package:code_builder/code_builder.dart';
 import 'package:dart_style/dart_style.dart';
-import 'package:glob/glob.dart';
-import 'package:yaml/yaml.dart';
 import 'package:path/path.dart' as path;
 
 Builder wrapperBuilder(BuilderOptions options) =>
@@ -22,33 +20,25 @@ class GenerateWrapperBuilder implements Builder {
 
   @override
   Map<String, List<String>> get buildExtensions => {
-        '.g.dart': ['.flutter.g.dart'],
-        '^l10n.yaml': [],
+        '.g.dart': ['.flutter.g.dart']
       };
 
   @override
   Future<void> build(BuildStep buildStep) async {
-    final l10nYamls = await buildStep.findAssets(Glob('l10n.yaml')).toList();
-    var l10nYamlAsset = l10nYamls.firstOrNull;
-    String name;
-    if (l10nYamlAsset != null) {
-      final pubspecData = await buildStep.readAsString(l10nYamlAsset);
-      final l10n = loadYaml(pubspecData) as YamlMap;
-      name = l10n['output-class'] as String;
-    } else {
-      name = 'Messages';
-    }
-    await BuildStepGenerator(buildStep, name).build();
+    await BuildStepGenerator(buildStep).build();
   }
 }
 
 class BuildStepGenerator {
   final BuildStep buildStep;
-  final String name;
 
-  BuildStepGenerator(this.buildStep, this.name);
+  BuildStepGenerator(this.buildStep);
 
   Future<void> build() async {
+    var inputString = await buildStep.readAsString(buildStep.inputId);
+    var customName =
+        RegExp(r'class ([A-Za-z]*)Messages {').firstMatch(inputString)?[1];
+    final name = '${customName ?? ''}Messages';
     final emitter = DartEmitter(orderDirectives: true);
 
     final asset = buildStep.inputId;
@@ -57,13 +47,13 @@ class BuildStepGenerator {
       Directive.import('package:flutter/widgets.dart'),
       Directive.import(
           'package:flutter_localizations/flutter_localizations.dart'),
-      Directive.import('package:flutter_messages/flutter_messages.dart'),
+      Directive.import('package:messages/package_intl_object.dart'),
       Directive.import(path.basename(asset.path)),
     ];
     Iterable<Spec> classes = [
       Class(
         (cb) => cb
-          ..name = '${name}Localizations'
+          ..name = '${customName}Localizations'
           ..fields.addAll(
             [
               Field(
@@ -85,7 +75,7 @@ class BuildStepGenerator {
                   ..name = 'delegate'
                   ..type = Reference('LocalizationsDelegate<$name>')
                   ..static = true
-                  ..assignment = Code('${name}LocalizationsDelegate()'),
+                  ..assignment = Code('${customName}LocalizationsDelegate()'),
               ),
             ],
           )
@@ -120,7 +110,7 @@ class BuildStepGenerator {
       ),
       Class(
         (cb) => cb
-          ..name = '${name}LocalizationsDelegate'
+          ..name = '${customName}LocalizationsDelegate'
           ..extend = Reference('LocalizationsDelegate<$name>')
           ..methods.addAll([
             Method(

@@ -3,7 +3,7 @@ builders:
   copyBuilder:
     import: "package:flutter_messages/builder.dart"
     builder_factories: ["wrapperBuilder"]
-    build_extensions: {'.arb': ['.flutter.g.dart'], '^l10n.yaml': []}
+    build_extensions: {'.arb': ['.flutter.g.dart']}
     build_to: source
     auto_apply: root_package
     required_inputs: ['.g.dart']
