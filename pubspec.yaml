@@ -37,6 +37,16 @@ dependency_overrides:
       url: git@github.com:dart-lang/i18n.git
       path: pkgs/messages
       ref: adaptToFlutterGallery
+  messages_serializer:
+    git:
+      url: git@github.com:dart-lang/i18n.git
+      path: pkgs/messages_serializer
+      ref: adaptToFlutterGallery
+  messages_deserializer:
+    git:
+      url: git@github.com:dart-lang/i18n.git
+      path: pkgs/messages_deserializer
+      ref: adaptToFlutterGallery
   messages_builder:
     git:
       url: git@github.com:dart-lang/i18n.git
