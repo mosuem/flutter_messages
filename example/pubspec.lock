@@ -320,32 +320,40 @@ packages:
     source: hosted
     version: "0.5.0"
   messages:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
-      path: "../../i18n/pkgs/messages"
-      relative: true
-    source: path
+      path: "pkgs/messages"
+      ref: adaptToFlutterGallery
+      resolved-ref: ae8f5fc7221ee5637f496c68d5cf6b0370e27ea7
+      url: "git@github.com:dart-lang/i18n.git"
+    source: git
     version: "0.1.0"
   messages_builder:
     dependency: "direct dev"
     description:
-      path: "../../i18n/pkgs/messages_builder"
-      relative: true
-    source: path
+      path: "pkgs/messages_builder"
+      ref: adaptToFlutterGallery
+      resolved-ref: ae8f5fc7221ee5637f496c68d5cf6b0370e27ea7
+      url: "git@github.com:dart-lang/i18n.git"
+    source: git
     version: "0.1.0"
   messages_deserializer:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
-      path: "../../i18n/pkgs/messages_deserializer"
-      relative: true
-    source: path
+      path: "pkgs/messages_deserializer"
+      ref: adaptToFlutterGallery
+      resolved-ref: ae8f5fc7221ee5637f496c68d5cf6b0370e27ea7
+      url: "git@github.com:dart-lang/i18n.git"
+    source: git
     version: "0.1.0"
   messages_serializer:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
-      path: "../../i18n/pkgs/messages_serializer"
-      relative: true
-    source: path
+      path: "pkgs/messages_serializer"
+      ref: adaptToFlutterGallery
+      resolved-ref: ae8f5fc7221ee5637f496c68d5cf6b0370e27ea7
+      url: "git@github.com:dart-lang/i18n.git"
+    source: git
     version: "0.1.0"
   meta:
     dependency: transitive
