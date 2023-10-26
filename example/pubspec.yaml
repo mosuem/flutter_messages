@@ -85,8 +85,6 @@ messages:
 
 # The following section is specific to Flutter packages.
 flutter:
-  generate: true # Enables generation of localized strings from arb files
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

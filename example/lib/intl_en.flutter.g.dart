@@ -3,7 +3,7 @@
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_messages/flutter_messages.dart';
+import 'package:messages/package_intl_object.dart';
 
 import 'intl_en.g.dart';
 

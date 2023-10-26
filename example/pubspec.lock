@@ -324,7 +324,7 @@ packages:
     description:
       path: "pkgs/messages"
       ref: adaptToFlutterGallery
-      resolved-ref: ae8f5fc7221ee5637f496c68d5cf6b0370e27ea7
+      resolved-ref: "217dec19073ae22cab68828153859b093b2be966"
       url: "git@github.com:dart-lang/i18n.git"
     source: git
     version: "0.1.0"
@@ -333,7 +333,7 @@ packages:
     description:
       path: "pkgs/messages_builder"
       ref: adaptToFlutterGallery
-      resolved-ref: ae8f5fc7221ee5637f496c68d5cf6b0370e27ea7
+      resolved-ref: "217dec19073ae22cab68828153859b093b2be966"
       url: "git@github.com:dart-lang/i18n.git"
     source: git
     version: "0.1.0"
@@ -342,7 +342,7 @@ packages:
     description:
       path: "pkgs/messages_deserializer"
       ref: adaptToFlutterGallery
-      resolved-ref: ae8f5fc7221ee5637f496c68d5cf6b0370e27ea7
+      resolved-ref: "217dec19073ae22cab68828153859b093b2be966"
       url: "git@github.com:dart-lang/i18n.git"
     source: git
     version: "0.1.0"
@@ -351,7 +351,7 @@ packages:
     description:
       path: "pkgs/messages_serializer"
       ref: adaptToFlutterGallery
-      resolved-ref: ae8f5fc7221ee5637f496c68d5cf6b0370e27ea7
+      resolved-ref: "217dec19073ae22cab68828153859b093b2be966"
       url: "git@github.com:dart-lang/i18n.git"
     source: git
     version: "0.1.0"

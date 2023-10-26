@@ -37,8 +37,10 @@ class BuildStepGenerator {
   Future<void> build() async {
     var inputString = await buildStep.readAsString(buildStep.inputId);
     var customName =
-        RegExp(r'class ([A-Za-z]*)Messages {').firstMatch(inputString)?[1];
+        RegExp(r'class ([A-Za-z]+)Messages {').firstMatch(inputString)?[1];
     final name = '${customName ?? ''}Messages';
+    final delegateName = '${customName ?? 'Messages'}LocalizationsDelegate';
+    final localizationsName = '${customName ?? 'Messages'}Localizations';
     final emitter = DartEmitter(orderDirectives: true);
 
     final asset = buildStep.inputId;
@@ -53,7 +55,7 @@ class BuildStepGenerator {
     Iterable<Spec> classes = [
       Class(
         (cb) => cb
-          ..name = '${customName}Localizations'
+          ..name = localizationsName
           ..fields.addAll(
             [
               Field(
@@ -75,7 +77,7 @@ class BuildStepGenerator {
                   ..name = 'delegate'
                   ..type = Reference('LocalizationsDelegate<$name>')
                   ..static = true
-                  ..assignment = Code('${customName}LocalizationsDelegate()'),
+                  ..assignment = Code('$delegateName()'),
               ),
             ],
           )
@@ -110,7 +112,7 @@ class BuildStepGenerator {
       ),
       Class(
         (cb) => cb
-          ..name = '${customName}LocalizationsDelegate'
+          ..name = delegateName
           ..extend = Reference('LocalizationsDelegate<$name>')
           ..methods.addAll([
             Method(
