@@ -1,1 +1,1 @@
-A wrapper around `package:messages` to provide some Flutter-specific functionality. Mainly specifies a Builder to generate some wrapping code.
+A wrapper around `package:messages` to provide some Flutter-specific functionality. Mainly specifies a `Builder`` to generate some wrapping code.

@@ -1,9 +1,10 @@
 name: flutter_messages
-description: "A new Flutter package project."
-version: 0.0.1
+description: "A wrapper around package:messages for Flutter"
+repository: https://github.com/mosuem/flutter_messages
+version: 0.1.0
 
 environment:
-  sdk: '>=3.2.0-131.0.dev <4.0.0'
+  sdk: '>=3.0.0 <4.0.0'
   flutter: ">=1.17.0"
 
 dependencies:
@@ -17,8 +18,7 @@ dependencies:
   dart_style: ^2.2.4
   glob: ^2.1.1
   messages_builder: ^0.1.0
-  path: any
-
+  path: ^1.8.3
 
 dev_dependencies:
   flutter_test:
