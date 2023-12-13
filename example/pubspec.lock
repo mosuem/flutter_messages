@@ -346,10 +346,9 @@ packages:
   messages_builder:
     dependency: "direct dev"
     description:
-      name: messages_builder
-      sha256: "2f0447d6e51d0d728bdbd740ce589400004dcc937950f84c4e38f219c015ad4e"
-      url: "https://pub.dev"
-    source: hosted
+      path: "../../i18n/pkgs/messages_builder"
+      relative: true
+    source: path
     version: "0.1.0"
   messages_serializer:
     dependency: transitive

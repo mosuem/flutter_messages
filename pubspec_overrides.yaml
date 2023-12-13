@@ -1,0 +1,3 @@
+dependency_overrides:
+  messages_builder:
+    path: ../i18n/pkgs/messages_builder
