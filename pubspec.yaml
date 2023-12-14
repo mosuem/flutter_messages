@@ -12,12 +12,12 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  messages: ^0.1.0
+  messages: ^0.1.1
   build: ^2.3.1
   code_builder: ^4.3.0
   dart_style: ^2.2.4
   glob: ^2.1.1
-  messages_builder: ^0.1.0
+  messages_builder: ^0.1.1
   path: ^1.8.3
 
 dev_dependencies:

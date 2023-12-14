@@ -37,7 +37,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  messages_builder: ^0.1.0
+  messages_builder: ^0.1.1
   build_runner: 2.4.6
   build_runner_core: 7.2.10
   watcher: 1.1.0

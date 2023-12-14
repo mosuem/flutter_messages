@@ -339,17 +339,17 @@ packages:
     dependency: transitive
     description:
       name: messages
-      sha256: "14133e25893352b84e40e2f6679657ac9d221a6ee82d6d4593f1f470d27d8530"
+      sha256: "439dfa5b3653e75754f5ce2d96b95a5009de64b0268e8af837ccde9081e8897f"
       url: "https://pub.dev"
     source: hosted
-    version: "0.1.0"
+    version: "0.1.1"
   messages_builder:
     dependency: "direct dev"
     description:
       path: "../../i18n/pkgs/messages_builder"
       relative: true
     source: path
-    version: "0.1.0"
+    version: "0.1.1"
   messages_serializer:
     dependency: transitive
     description:
