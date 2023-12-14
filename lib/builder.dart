@@ -40,11 +40,14 @@ class BuildStepGenerator {
 
   Future<void> build() async {
     var inputString = await buildStep.readAsString(buildStep.inputId);
-    var customName =
-        RegExp(r'class ([A-Za-z]+)Messages {').firstMatch(inputString)?[1];
-    final name = '${customName ?? ''}Messages';
-    final delegateName = '${customName ?? 'Messages'}LocalizationsDelegate';
-    final localizationsName = '${customName ?? 'Messages'}Localizations';
+    var firstMatch =
+        RegExp(r'class ([A-Za-z]*)Messages {').firstMatch(inputString);
+    if (firstMatch == null) {
+      return;
+    }
+    final name = '${firstMatch[1]}Messages';
+    final delegateName = '${name}LocalizationsDelegate';
+    final localizationsName = '${name}Localizations';
     final emitter = DartEmitter(orderDirectives: true);
 
     final asset = buildStep.inputId;
