@@ -20,7 +20,7 @@ class MessagesLocalizations {
   ];
 
   static LocalizationsDelegate<Messages> delegate =
-      MessagesLocalizationsDelegate();
+      _MessagesLocalizationsDelegate();
 
   static List<Locale> get supportedLocales {
     return Messages.knownLocales.map((e) {
@@ -34,7 +34,7 @@ class MessagesLocalizations {
       Localizations.of<Messages>(context, Messages);
 }
 
-class MessagesLocalizationsDelegate extends LocalizationsDelegate<Messages> {
+class _MessagesLocalizationsDelegate extends LocalizationsDelegate<Messages> {
   @override
   bool isSupported(Locale locale) =>
       Messages.knownLocales.contains(locale.toString());

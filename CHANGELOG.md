@@ -1,3 +1,7 @@
+## 0.3.0
+
+* Make Delegate private.
+
 ## 0.2.0
 
 * Add extension on `BuildContext`.

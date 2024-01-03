@@ -46,7 +46,7 @@ class BuildStepGenerator {
       return;
     }
     final name = '${firstMatch[1]}Messages';
-    final delegateName = '${name}LocalizationsDelegate';
+    final delegateName = '_${name}LocalizationsDelegate';
     final localizationsName = '${name}Localizations';
     final emitter = DartEmitter(orderDirectives: true);
 
