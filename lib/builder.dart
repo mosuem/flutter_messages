@@ -165,7 +165,20 @@ await messages.loadLocale(locale.toString());
                 ..returns = const Reference('bool'),
             )
           ]),
-      )
+      ),
+      Extension(
+        (eb) => eb
+          ..name = '${localizationsName}Extension'
+          ..on = const Reference('BuildContext')
+          ..methods.add(Method(
+            (mb) => mb
+              ..type = MethodType.getter
+              ..name = localizationsName.minuscule()
+              ..lambda = true
+              ..body = const Code('MessagesLocalizations.of(this)')
+              ..returns = const Reference('Messages?'),
+          )),
+      ),
     ];
     var lib = Library((b) => b
       ..comments.add(generationOptions.header)
@@ -184,5 +197,11 @@ await messages.loadLocale(locale.toString());
         AssetId(asset.package,
             '${asset.path.substring(0, asset.path.length - '.g.dart'.length)}.flutter.g.dart'),
         contents);
+  }
+}
+
+extension on String {
+  String minuscule() {
+    return "${this[0].toLowerCase()}${substring(1)}";
   }
 }

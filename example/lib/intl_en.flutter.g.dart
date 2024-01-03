@@ -49,4 +49,8 @@ class MessagesLocalizationsDelegate extends LocalizationsDelegate<Messages> {
   bool shouldReload(LocalizationsDelegate<Messages> old) => false;
 }
 
+extension MessagesLocalizationsExtension on BuildContext {
+  Messages? get messagesLocalizations => MessagesLocalizations.of(this);
+}
+
 Messages messages = Messages(rootBundle.loadString, const OldIntlObject());
