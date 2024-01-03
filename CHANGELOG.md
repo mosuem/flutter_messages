@@ -1,3 +1,7 @@
+## 0.2.0
+
+* Add extension on `BuildContext`.
+
 ## 0.1.2
 
 * Do not generate on non-message files (hack).
